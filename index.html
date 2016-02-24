@@ -1,10 +1,101 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Blank</title>
+	
+	<link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
+	<link rel="icon" href="favicon.png" type="image/png" sizes="16x16">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="/jquery.autoSave.min.js"></script>
+
+  <style>
+  html {
+	font-family: 'Candal', sans-serif;
+  }
+  body {
+	margin:0;
+	font-size:100%;
+  }
+  textarea {
+	font-size:30px;
+	color:#212121;
+	width:90%;
+	height:100vh;
+	border:none;
+	outline:none;
+	margin-left:5%;
+	margin-top:25px;
+	resize: none;
+  }
+  h3 {
+  	font-size: 18px;
+  }
+  .header {
+  	max-height:20px;
+  }
+a {
+	text-decoration: none;
+	color: #0D47A1;
+	font-size: 15px;
+}
+
+  </style>
+<title>ThoughtPad - Write Your Thoughts</title>
 </head>
 
 <body>
+  <script type="text/javascript">
+$(function() {
+if (localStorage) {
+var content = localStorage.getItem("autoSave");
+if(content) {
+$("#text").text(content);
+}
+}
+
+$("#text").autoSave(function() {
+var time = showTime();
+$("#msg").text("Draft Autosaved " + time).show();
+}, 2000);
+
+$("#refresh").click(function() {
+location.reload();
+});
+
+$("#clear").click(function() {
+localStorage.clear();
+location.reload();
+});
+
+function showTime() {
+var timeNow = new Date();
+var hours = timeNow.getHours();
+var minutes = timeNow.getMinutes();
+var seconds = timeNow.getSeconds();
+var timeString = "" + ((hours > 12) ? hours - 12 : hours);
+timeString += ((minutes < 10) ? ":0" : ":") + minutes;
+timeString += ((seconds < 10) ? ":0" : ":") + seconds;
+timeString += (hours >= 12) ? " P.M." : " A.M.";
+return timeString;
+}
+});
+</script>
+<script>var editor = new MediumEditor('.editable');</script>
+
+<div class="header">
+	<h2 align="center">ThoughtPad</h2>
+	
+</div>
+
+<span id="msg"></span>
+<textarea id="text" placeholder="Type stuff here.... It will be autosaved" autofocus>
+</textarea>
+
+<div class="footer">
+	<hr />
+	<div style="margin-left:3%;float:left;">
+	<img src="../s.png" style="height:40px;"></div>
+	<div style="margin-top:1%;margin-right:3%;float:right;">Favicon by <a href="http://www.freepik.com/">Freepik</a> from <a href="www.flaticon.com">Flaticon</a></div> 
+</div>
 
 </body>
 
