@@ -22,10 +22,15 @@
 	<meta name="twitter:url" content="https://thoughtpad.kingdomofs.com" />
 	<meta name="twitter:image" content="https://thoughtpad.kingdomofs.com/preview.jpg" />
 
+	<link rel="stylesheet" type="text/css" href="normalize.css">
 	<link href='//fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
 	<link rel="icon" href="favicon.png" type="image/png" sizes="16x16">
+	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="//cdn.rawgit.com/kingdomofs/Thoughtpad/gh-pages/jquery.autoSave.min.js"></script>
+	<script src="//thoughtpad.kingdomofs.com/jquery.autoSave.min.js"></script>
+	
+	<link href="lity/lity.css" rel="stylesheet">
+	<script src="lity/lity.js"></script>
 
 	<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -61,7 +66,7 @@
 	font-family: 'Candal', sans-serif;
   }
   body {
-	margin:0;
+	margin-top: -20px;
 	font-size:100%;
   }
   textarea {
@@ -75,65 +80,85 @@
 	margin-top:25px;
 	resize: none;
   }
+  h2.title {
+  	margin-left: 5%;
+  	width: 50%;
+  }
   h3 {
   	font-size: 18px;
   }
   .header {
-  	max-height:20px;
+  	max-height:40px;
+  	height: 100%;
+  	background-color: #263238;
+  	color: #fafafa;
   }
-a {
-	text-decoration: none;
-	color: #0D47A1;
-	font-size: 15px;
-}
+	a {
+		text-decoration: none;
+		color: #0D47A1;
+		font-size: 15px;
+	}
+	a.ftr {
+		padding-right:10px;
+		font-size: 13px;
+		color: #757575;
+	}
+	a.abt {
+		color:#fafafa;
+		margin-top:-45px;
+		float:right;
+		margin-right:2%;
+		border-radius:5px;
+		padding:3px;
+		border:1px solid #fafafa;
+	}
 
   </style>
 <title>ThoughtPad - Write Your Thoughts</title>
 </head>
 
 <body>
-  <script type="text/javascript">
-$(function() {
-if (localStorage) {
-var content = localStorage.getItem("autoSave");
-if(content) {
-$("#text").text(content);
-}
-}
+		  <script type="text/javascript">
+		$(function() {
+		if (localStorage) {
+		var content = localStorage.getItem("autoSave");
+		if(content) {
+		$("#text").text(content);
+		}
+		}
+		
+		$("#text").autoSave(function() {
+		var time = showTime();
+		$("#msg").text("Draft Autosaved " + time).show();
+		}, 2000);
+		
+		$("#refresh").click(function() {
+		location.reload();
+		});
+		
+		$("#clear").click(function() {
+		localStorage.clear();
+		location.reload();
+		});
+		
+		function showTime() {
+		var timeNow = new Date();
+		var hours = timeNow.getHours();
+		var minutes = timeNow.getMinutes();
+		var seconds = timeNow.getSeconds();
+		var timeString = "" + ((hours > 12) ? hours - 12 : hours);
+		timeString += ((minutes < 10) ? ":0" : ":") + minutes;
+		timeString += ((seconds < 10) ? ":0" : ":") + seconds;
+		timeString += (hours >= 12) ? " P.M." : " A.M.";
+		return timeString;
+		}
+		});
+		</script>
 
-$("#text").autoSave(function() {
-var time = showTime();
-$("#msg").text("Draft Autosaved " + time).show();
-}, 2000);
-
-$("#refresh").click(function() {
-location.reload();
-});
-
-$("#clear").click(function() {
-localStorage.clear();
-location.reload();
-});
-
-function showTime() {
-var timeNow = new Date();
-var hours = timeNow.getHours();
-var minutes = timeNow.getMinutes();
-var seconds = timeNow.getSeconds();
-var timeString = "" + ((hours > 12) ? hours - 12 : hours);
-timeString += ((minutes < 10) ? ":0" : ":") + minutes;
-timeString += ((seconds < 10) ? ":0" : ":") + seconds;
-timeString += (hours >= 12) ? " P.M." : " A.M.";
-return timeString;
-}
-});
-</script>
-<script>var editor = new MediumEditor('.editable');</script>
-
-<div class="header">
-	<h2 align="center">ThoughtPad</h2>
-
-</div>
+<header class="header">
+	<h2 class="title">ThoughtPad</h2>
+	<a href="#inline" data-lity class="abt">About</a>
+</header>
 
 <span id="msg"></span>
 <textarea id="text" placeholder="Type stuff here.... It will be autosaved" autofocus>
@@ -141,10 +166,26 @@ return timeString;
 
 <div class="footer">
 	<hr />
-	<div style="margin-left:3%;float:left;">
-
-	<img src="../s.png" style="height:40px;"></div>
-	<div style="margin-top:1%;margin-right:3%;float:right;font-size:10px;color:#616161;">Favicon by <a style="font-size:10px;color:#616161;" href="http://www.freepik.com/">Freepik</a> from <a style="font-size:10px;color:#616161;" href="www.flaticon.com">Flaticon</a></div>
+	<div style="margin-left:3%;float:left;"><a href="https://www.kingdomofs.com"><img src="s.png" style="height:40px;"></a></div>
+	
+	<div style="margin-top:1%;margin-right:3%;float:right;font-size:10px;color:#616161;"><a class="ftr" href="#inline" data-lity>About</a><a class="ftr" href="https://twitter.com/thoughtpadapp" target="_blank">Twitter</a><a class="ftr" href="https://www.facebook.com/Thoughtpad-901392439983494/?fref=ts" target="_blank">Facebook</a></div>
+	
+	
+	
+	<div id="inline" style="background:#fff;padding:3%;border-radius:15px" class="lity-hide">
+		<h2>About</h2>
+			<p>ThoughtPad is an online auto-saving note taking web-app. In other words whatever you type in at ThoughtPad is <br/>instantly saved in your browser(not on a server). So type in your thoughts and forget about it as all data is auto saved every 2 seconds. That said, if you clear your browser data/cookies/cache you lose all your data saved! </p>
+			<p> ThoughtPad is built and maintained by <a href="https://twitter.com/Kingdomof_S" target="_blank">Sandeep Tripathy</a></p>
+		<h2>ThoughtPad in Media</h2>
+		<ul>
+		  <li><a href="https://www.producthunt.com/tech/thoughtpad" target="_blank">Product Hunt</a> - Featured in top 10 :-)</li>
+		  <li><a href="http://www.gratis.it/Detailed/30513.html" target="_blank">Gratis.it</a></li>
+		  <li><a href="http://roget.biz/thoughtpad-bloc-note-pour-ecrire-un-truc-rapide-sauvegarde-dans-le-navigateur" target="_blank">Cocktail Web</a></li>
+		  <li><a href="http://12y2.com/2016/thoughtpad/" target="_blank">12y2</a></li>
+		  <li><a href="http://www.thinksaas.cn/favorite/0/166/166499.html" target="_blank">ThinkSAAS</a></li>
+		  <li><a href="http://www.marcosguerrero.com/indianwebs/thoughtpad-una-web-para-tomar-notas-que-se-guardan-automaticamente-en-el-navegador-evernote-web/" target="_blank">Marcos Guerrero</a></li>
+		</ul>
+	</div>
 
 
 </div>
