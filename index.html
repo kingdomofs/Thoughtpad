@@ -23,14 +23,23 @@
 	<meta name="twitter:image" content="https://thoughtpad.kingdomofs.com/preview.jpg" />
 
 	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href='//fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
 	<link rel="icon" href="favicon.png" type="image/png" sizes="16x16">
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="//thoughtpad.kingdomofs.com/jquery.autoSave.min.js"></script>
+	<script src="https://use.fontawesome.com/a48761d8ba.js"></script>
+	
+	
+
 	
 	<link href="lity/lity.css" rel="stylesheet">
 	<script src="lity/lity.js"></script>
+	
+	
+
+	
 
 	<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -61,59 +70,6 @@
 }
 </script>
 
-  <style>
-  html {
-	font-family: 'Candal', sans-serif;
-  }
-  body {
-	margin-top: -20px;
-	font-size:100%;
-  }
-  textarea {
-	font-size:30px;
-	color:#212121;
-	width:90%;
-	height:100vh;
-	border:none;
-	outline:none;
-	margin-left:5%;
-	margin-top:25px;
-	resize: none;
-  }
-  h2.title {
-  	margin-left: 5%;
-  	width: 50%;
-  }
-  h3 {
-  	font-size: 18px;
-  }
-  .header {
-  	max-height:40px;
-  	height: 100%;
-  	background-color: #263238;
-  	color: #fafafa;
-  }
-	a {
-		text-decoration: none;
-		color: #0D47A1;
-		font-size: 15px;
-	}
-	a.ftr {
-		padding-right:10px;
-		font-size: 13px;
-		color: #757575;
-	}
-	a.abt {
-		color:#fafafa;
-		margin-top:-45px;
-		float:right;
-		margin-right:2%;
-		border-radius:5px;
-		padding:3px;
-		border:1px solid #fafafa;
-	}
-
-  </style>
 <title>ThoughtPad - Write Your Thoughts</title>
 </head>
 
@@ -129,7 +85,7 @@
 		
 		$("#text").autoSave(function() {
 		var time = showTime();
-		$("#msg").text("Draft Autosaved " + time).show();
+		$("#msg").text("Note Autosaved " + time).show();
 		}, 2000);
 		
 		$("#refresh").click(function() {
@@ -154,29 +110,54 @@
 		}
 		});
 		</script>
+<form action="MAILTO:?&subject=Message from ThoughtPad&body=Message%20from%20ThoughtPad%0A" method="post" enctype="text/plain">
 
-<header class="header">
-	<h2 class="title">ThoughtPad</h2>
-	<a href="#inline" data-lity class="abt">About</a>
+<header>
+	<div class="header">
+		<span class="title">ThoughtPad</span>
+		<a href="#inline" data-lity class="abt"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;About</a>
+	</div>	
+	<div class="subheader">
+		<span class="shwmsg" id="msg"></span>
+		<span class="dwnld"><a href="#" id="btn-dnd" class="downloadbtn fa fa-download" aria-hidden="true"></a>
+				<input class="sndbtn" type="submit" value="Email">
+		</span>
+	</div>
 </header>
 
-<span id="msg"></span>
-<textarea id="text" placeholder="Type stuff here.... It will be autosaved" autofocus>
+        
+    <article>    
+        
+<!--<input type="text" class="title-note" placeholder="Title (Optional)">-->
+<textarea name="Note" id="text" placeholder="Type stuff here.... It will be autosaved" autofocus>
 </textarea>
 
+</form>
+
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/FileSaver.js"></script>
+	<script>
+		$("#btn-dnd").click( function() {
+		  var text = $("#text").val();
+		 //var filename = $("title-note").val() 
+		  var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
+		  saveAs(blob, 'ThoughtPad.txt');
+
+		});
+	</script>
+
+
+
+</article>
+
 <div class="footer">
-	<hr />
-	<div style="margin-left:3%;float:left;"><a href="https://www.kingdomofs.com"><img src="s.png" style="height:40px;"></a></div>
 	
-	<div style="margin-top:1%;margin-right:3%;float:right;font-size:10px;color:#616161;"><a class="ftr" href="#inline" data-lity>About</a><a class="ftr" href="https://twitter.com/thoughtpadapp" target="_blank">Twitter</a><a class="ftr" href="https://www.facebook.com/Thoughtpad-901392439983494/?fref=ts" target="_blank">Facebook</a></div>
-	
-	
-	
+
 	<div id="inline" style="background:#fff;padding:3%;border-radius:15px" class="lity-hide">
-		<h2>About</h2>
-			<p>ThoughtPad is an online auto-saving note taking web-app. In other words whatever you type in at ThoughtPad is <br/>instantly saved in your browser(not on a server). So type in your thoughts and forget about it as all data is auto saved every 2 seconds. That said, if you clear your browser data/cookies/cache you lose all your data saved! </p>
-			<p> ThoughtPad is built and maintained by <a href="https://twitter.com/Kingdomof_S" target="_blank">Sandeep Tripathy</a></p>
-		<h2>ThoughtPad in Media</h2>
+		<h2 align="center">About</h2>
+			<p align="center">ThoughtPad is an auto-saving online notepad.<br/>Whatever you type is autosaved in your browser.<br/>
+			You can Email or download your content as well. </p>
+			<p align="center"> ThoughtPad is built and maintained by <a href="https://twitter.com/Kingdomof_S" target="_blank">Sandeep Tripathy</a></p>
+		<h2 align="center">ThoughtPad in Media</h2>
 		<ul>
 		  <li><a href="https://www.producthunt.com/tech/thoughtpad" target="_blank">Product Hunt</a> - Featured in top 10 :-)</li>
 		  <li><a href="http://www.gratis.it/Detailed/30513.html" target="_blank">Gratis.it</a></li>
@@ -185,6 +166,9 @@
 		  <li><a href="http://www.thinksaas.cn/favorite/0/166/166499.html" target="_blank">ThinkSAAS</a></li>
 		  <li><a href="http://www.marcosguerrero.com/indianwebs/thoughtpad-una-web-para-tomar-notas-que-se-guardan-automaticamente-en-el-navegador-evernote-web/" target="_blank">Marcos Guerrero</a></li>
 		</ul>
+		<hr style="width:50%;margin-left:auto;margin-right:auto;">
+		<p align="center"><a href="https://www.kingdomofs.com" target="_blank"><img src="s.png" style="height:40px;"></a></p>
+		<p align="center" style="font-size:10px;color:#616161;"><a class="ftr" href="https://twitter.com/thoughtpadapp" target="_blank">Twitter</a><a class="ftr" href="https://www.facebook.com/Thoughtpad-901392439983494/?fref=ts" target="_blank">Facebook</a></p>
 	</div>
 
 
