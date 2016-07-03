@@ -30,7 +30,7 @@ html {
   	margin-left: 5%;
   	width: 50%;
   	font-size: 25px;
-  	color: #455A64;
+  	color: #424242;
   }
   h3 {
   	font-size: 18px;
@@ -62,8 +62,10 @@ html {
 	}
 .subheader {
 	height: 40px;
-	background-color: #78909C;
-	color: #fafafa;	
+	border-top: 1px solid #E0E0E0;
+  border-bottom: 1px solid #E0E0E0;
+	background-color: #EEEEEE;
+	color: #424242;
 	width: 100%;
 }
 .shwmsg {
@@ -80,19 +82,15 @@ html {
 .sndbtn {
 	    border: none;
 	    background: transparent;
-	    color: #fafafa;
+	    color: #424242;
 	    border-radius: 5px;
 	    padding: 5px;
 	    font-size: 15px;
 }
 
 .sndbtn:hover {
-	    cursor: pointer;	
+	    cursor: pointer;
 }
 .downloadbtn {
-	color: #fafafa;
+	color: #424242;
 }
-
-
-
-
