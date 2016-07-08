@@ -1,5 +1,6 @@
 html {
 	font-family: 'Candal', sans-serif;
+	overflow: hidden;
   }
   body {
 	/* margin-top: -20px; */
@@ -12,7 +13,9 @@ html {
 	height: 85vh;
 	border: none;
 	outline: none;
-	margin-left: 5%;
+	padding-left: 5%;
+	padding-top: 1%;
+	padding-right: 5%;
 	/* margin-top:42px; */
 	resize: none;
   }
