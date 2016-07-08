@@ -27,7 +27,7 @@ html {
 	border: none;
 	outline: none;
 	margin-left: 5%;
-	border-bottom: 1px solid #6e6e6e;
+	border-bottom: 1px solid #6e6e6e; 
   } */
   .title {
   	margin-left: 5%;
@@ -42,7 +42,7 @@ html {
 
   .header {
   	height:35px;
-  	background-color: #fafafa;
+  	background-color: #ffffff;
   	color: #fafafa;
   }
 	a {
