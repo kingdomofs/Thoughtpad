@@ -33,7 +33,7 @@ html {
   	margin-left: 5%;
   	width: 50%;
   	font-size: 25px;
-  	color: #424242;
+  	color: #616161;
   }
   h3 {
   	font-size: 18px;
@@ -41,7 +41,7 @@ html {
   }
 
   .header {
-  	height:35px;
+  	height: 45px;
   	background-color: #ffffff;
   	color: #fafafa;
   }
@@ -56,25 +56,26 @@ html {
 		color: #757575;
 	}
 	a.abt {
-		color:#263238;
-		float:right;
-		margin-right:5%;
-		border-radius:5px;
-		padding:5px;
-		border:1px solid #fafafa;
+		color: #ecf0f1;
+    		float: right;
+    		margin-top: 3px;
+    		//margin-right: 5%;
+    		border-radius: 5px;
+    		padding: 5px;
+    		background-color: #616161;
+    		border: 1px solid #616161;
 	}
 .subheader {
-	height: 40px;
-	border-top: 1px solid #E0E0E0;
-  border-bottom: 1px solid #E0E0E0;
-	background-color: #EEEEEE;
+	height: 25px;
 	color: #424242;
 	width: 100%;
 }
 .shwmsg {
-	margin: 10px;
-    	margin-left: 5%;
-	float:left;
+	 margin: 2px;
+    	margin-right: 5%;
+    	float: right;
+    	color: #757575;
+
 }
 .dwnld {
 	float:right;
@@ -82,13 +83,15 @@ html {
     	margin-right: 5%;
 }
 
+#btn-dnd,
 .sndbtn {
-	    border: none;
-	    background: transparent;
-	    color: #424242;
-	    border-radius: 5px;
-	    padding: 5px;
-	    font-size: 15px;
+	        border: none;
+    		background: transparent;
+    		color: #424242;
+    		margin-left: 10px;
+    		border-radius: 5px;
+    		padding: 5px;
+    		font-size: 15px;
 }
 
 .sndbtn:hover {
