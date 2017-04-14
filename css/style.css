@@ -100,3 +100,18 @@ html {
 .downloadbtn {
 	color: #424242;
 }
+
+/* media page*/
+
+.main {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+a.title-m {
+	text-decoration: none;
+    color: #fafafa;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #424242;
+}

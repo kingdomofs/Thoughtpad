@@ -35,6 +35,14 @@
 	<script src="lity/lity.js"></script>
 
 
+	<style>
+	html {
+	    overflow: visible !important;
+	}
+	</style>
+
+
+
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -68,17 +76,13 @@
 
 <body>
 	<script src="js/autosave.js" type="text/javascript"></script>
-	<form action="MAILTO:?&subject=Message from ThoughtPad&body=Message%20from%20ThoughtPad%0A" method="post" enctype="text/plain">
 
 <header>
 	<div class="header">
-		<span class="title">ThoughtPad</span>
+		<span class="title"><a class="title-m" href="/"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back Home</a></span>
 		
-		<span class="dwnld"><a href="#" id="btn-dnd" class="downloadbtn fa fa-download" aria-hidden="true"></a>
-				<input class="sndbtn" type="submit" value="Email">
-		</span>
 		
-		<a href="#inline" data-lity class="abt"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;About</a>
+		
 	</div>
 	<div class="subheader">
 		<span class="shwmsg" id="msg"></span>
@@ -88,35 +92,40 @@
 
 
     <article>
+	<div class="main">
+		<h1>ThoughtPad in Media</h1>
+		<p>ThoughtPad has been covered & reviwed by multiple blogs in many languages. It has been featured on ProductHunt homepage twice since March 2016 after which it has received favorable response including <a href="https://twitter.com/ThoughtPadApp/likes" target="_blank">hundreds of tweets</a>. The following is a collection featuring links from several blogs that have reviewed & published about ThoughtPad.<br/><br/>If you are a blogger and have written about ThoughtPad and wish to list your blog link on this page, contact at ThoughtPad@KingdomOfS.com</p>
+		
+		
+		<p id="demo"></p>
 
-<!--<input type="text" class="title-note" placeholder="Title (Optional)">-->
-<textarea name="Note" id="text" placeholder="Type stuff here.... It will be autosaved" autofocus>
-</textarea>
+<script src="js/media.js"></script>
 
-</form>
+<script>
+var myObj, i, x = "";
 
-	<script src="js/FileSaver.js"></script>
-	<script src="js/FileSaver2.js"></script>
+//x = myObj[1].name;
 
+for (i in myObj) {
+    x += "<i class='fa fa-dot-circle-o' aria-hidden='true'></i>&nbsp;&nbsp;<a target='_blank' href='" + myObj[i].url + "'>" + myObj[i].title + "</a><br/>";
+}
+
+document.getElementById("demo").innerHTML = x;
+
+</script>
+		
+		
+		
+
+
+	</div>
 
 
 </article>
 
-<div class="footer">
-
-
-	<div id="inline" style="background:#fff;padding:3%;border-radius:15px" class="lity-hide">
-		<h2 align="center">About</h2>
-			<p align="center">ThoughtPad is an auto-saving online notepad.<br/>Whatever you type is autosaved in your browser.<br/>
-			You can Email or download your content as well. </p>
-			<p align="center"> ThoughtPad is built and maintained by <a href="https://twitter.com/Kingdomof_S" target="_blank">Sandeep Tripathy</a><br/>
-		ThoughtPad has been extensively covered in the media, <br/><a href="/media.html">read all about it</a>.
-</p>		
-		<hr style="width:50%;margin-left:auto;margin-right:auto;">
-		<p align="center"><a href="https://www.kingdomofs.com" target="_blank"><img src="img/s.png" style="height:40px;"></a></p>
-		<p align="center" style="font-size:10px;color:#616161;"><a class="ftr" href="https://twitter.com/ThoughtPadApp" target="_blank">Twitter</a><a class="ftr" href="https://www.facebook.com/Thoughtpad-901392439983494/?fref=ts" target="_blank">Facebook</a></p>
-	</div>
-
+<div style="margin-top:5%;padding-left:5%;padding-right:5%;" class="footer">
+	<hr/>
+	<i class="fa fa-copyright" aria-hidden="true"></i>&nbsp;ThoughtPad<br/>Cooked By <a target="_blank" href="https://www.kingdomofs.com/">Sandeep Tripathy</a>
 
 </div>
 
