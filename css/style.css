@@ -1,5 +1,5 @@
 html {
-	font-family: 'Candal', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	overflow: hidden;
   }
   body {
@@ -27,13 +27,14 @@ html {
 	border: none;
 	outline: none;
 	margin-left: 5%;
-	border-bottom: 1px solid #6e6e6e; 
+	border-bottom: 1px solid #6e6e6e;
   } */
   .title {
   	margin-left: 5%;
   	width: 50%;
   	font-size: 25px;
-  	color: #616161;
+  	color: #111111;
+		font-weight: bold;
   }
   h3 {
   	font-size: 18px;
@@ -44,7 +45,24 @@ html {
   	height: 45px;
   	background-color: #ffffff;
   	color: #fafafa;
+		margin-top:1%;
   }
+
+	.header-1,
+	.header-2,
+	.header-3 {
+		float: left;
+		width: 32%;
+	}
+
+	.header-2 {
+		text-align: center;
+	}
+
+	.header-3 {
+		text-align: right;
+	}
+
 	a {
 		text-decoration: none;
 		color: #0D47A1;
@@ -56,14 +74,15 @@ html {
 		color: #757575;
 	}
 	a.abt {
-		color: #ecf0f1;
+				color: #111111;
     		float: right;
     		margin-top: 3px;
     		//margin-right: 5%;
-    		border-radius: 5px;
+    		//border-radius: 5px;
     		padding: 5px;
-    		background-color: #616161;
-    		border: 1px solid #616161;
+
+    		//background-color: #616161;
+    		//border: 1px solid #616161;
 	}
 .subheader {
 	height: 25px;
@@ -87,11 +106,12 @@ html {
 .sndbtn {
 	        border: none;
     		background: transparent;
-    		color: #424242;
+    		color: #111111;
     		margin-left: 10px;
     		border-radius: 5px;
     		padding: 5px;
     		font-size: 15px;
+				font-weight: bold;
 }
 
 .sndbtn:hover {
@@ -114,4 +134,72 @@ a.title-m {
     padding: 5px;
     border-radius: 5px;
     background-color: #424242;
+}
+
+
+
+/* overlay navigation */
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay {
+  text-decoration: none;
+  font-size: 26px;
+  color: #fafafa;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+.overlay a {
+  text-decoration: none;
+  font-size: 26px;
+	font-weight: bolder;
+  color: #e0e0e0;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  margin-top: 1%;
+  margin-left: 3%;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
 }

@@ -31,8 +31,29 @@
 	<script src="js/jquery.autoSave.min.js"></script>
 	<script src="https://use.fontawesome.com/a48761d8ba.js"></script>
 
+
 	<link href="lity/lity.css" rel="stylesheet">
 	<script src="lity/lity.js"></script>
+
+
+<script>
+/* Open when someone clicks on the span element */
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    if (evt.keyCode == 27) {
+        closeNav();
+    }
+};
+</script>
 
 
 	<script>
@@ -40,7 +61,7 @@
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	
+
 	  ga('create', 'UA-74122921-3', 'auto');
 	  ga('send', 'pageview');
 	</script>
@@ -54,7 +75,7 @@
 	 "author": {
 			"@type": "Person",
 			"name": "Sandeep Tripathy",
-			"url": "kingdomofs.com",
+			"url": "iamelshawn.com",
 			"birthDate": "1991-06-08",
 			"image": "https://strun.github.io/author.jpg"
 		},
@@ -72,17 +93,45 @@
 
 <header>
 	<div class="header">
-		<span class="title">ThoughtPad</span>
-		
+		<div class="header-1">
+		<i  onclick="openNav()" style="font-size: 160%; color:#111;margin-left:5%;" class="fa fa-bars"></i>
+	</div>
+
+	<div class="header-2">
+		<span align="center" class="title">ThoughtPad</span>
+	</div>
+
+	<div class="header-3"
 		<span class="dwnld"><a href="#" id="btn-dnd" class="downloadbtn fa fa-download" aria-hidden="true"></a>
 				<input class="sndbtn" type="submit" value="Email">
 		</span>
-		
-		<a href="#inline" data-lity class="abt"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;About</a>
+	</div>
+
+		<!-- <a  onclick="openNav()" data-lity class="abt"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;About</a> -->
+		<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+		<h2 align="center">About</h2>
+			<p align="center">ThoughtPad is an auto-saving online notepad.<br/>Whatever you type is autosaved in your browser.<br/>
+			You can Email or download your content as well. </p>
+			<p align="center"> ThoughtPad is built and maintained by <a href="https://twitter.com/iamelshawn" target="_blank">Sandeep Tripathy</a><br/>
+		ThoughtPad has been extensively covered in the media, <br/><a href="/media.html">read all about it</a>
+		</p>
+		<hr style="width:50%;margin-left:auto;margin-right:auto;">
+		</div>
+  </div>
+
+</div>
+
 	</div>
 	<div class="subheader">
 		<span class="shwmsg" id="msg"></span>
-		
+
 	</div>
 </header>
 
@@ -105,17 +154,17 @@
 <div class="footer">
 
 
-	<div id="inline" style="background:#fff;padding:3%;border-radius:15px" class="lity-hide">
+<!--	<div id="inline" style="background:#fff;padding:3%;border-radius:15px" class="lity-hide">
 		<h2 align="center">About</h2>
 			<p align="center">ThoughtPad is an auto-saving online notepad.<br/>Whatever you type is autosaved in your browser.<br/>
 			You can Email or download your content as well. </p>
 			<p align="center"> ThoughtPad is built and maintained by <a href="https://twitter.com/Kingdomof_S" target="_blank">Sandeep Tripathy</a><br/>
 		ThoughtPad has been extensively covered in the media, <br/><a href="/media.html">read all about it</a>.
-</p>		
+</p>
 		<hr style="width:50%;margin-left:auto;margin-right:auto;">
 		<p align="center"><a href="https://www.kingdomofs.com" target="_blank"><img src="img/s.png" style="height:40px;"></a></p>
 		<p align="center" style="font-size:10px;color:#616161;"><a class="ftr" href="https://twitter.com/ThoughtPadApp" target="_blank">Twitter</a><a class="ftr" href="https://www.facebook.com/Thoughtpad-901392439983494/?fref=ts" target="_blank">Facebook</a></p>
-	</div>
+	</div> -->
 
 
 </div>
