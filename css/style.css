@@ -203,3 +203,33 @@ a.title-m {
     right: 35px;
   }
 }
+
+/* Donate button styling for responsive */
+
+@media only screen and (max-width: 700px) {
+  .donate-header {
+	display: block;
+	overflow: hidden;
+	height: 5%;
+	background-color: #eeeeee;
+	padding: 5px;
+  }
+  .paypal-btn,
+  .paypal-btn-img {
+	display: none;
+  }
+}
+
+@media only screen and (min-width: 701px) {
+  .paypal-btn {
+	display: block;
+  }
+  .paypal-btn-img {
+      margin-top: 1.5%;
+      float: right;
+  }
+  .donate-header,
+  .donate-h-l {
+      display: none !important;
+  }
+}
